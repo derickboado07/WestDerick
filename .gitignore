@@ -30,6 +30,10 @@ migrate_working_dir/
 .flutter-plugins-dependencies
 .pub-cache/
 .pub/
+# The `build/` directory normally contains generated artifacts.
+# It is ignored by default, but you've requested the build folder be pushed.
+# Uncomment the next line to ignore build again in future:
+# /build/
 /build/
 /coverage/
 
