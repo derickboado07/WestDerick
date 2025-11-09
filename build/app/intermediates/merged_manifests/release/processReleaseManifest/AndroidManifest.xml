@@ -7,6 +7,8 @@
     <uses-sdk
         android:minSdkVersion="24"
         android:targetSdkVersion="36" />
+    <!-- Allow network access in release builds (needed for Firebase, HTTP requests, images) -->
+    <uses-permission android:name="android.permission.INTERNET" />
     <!--
          Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and
@@ -22,7 +24,6 @@
         </intent>
     </queries>
 
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 

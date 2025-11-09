@@ -48,7 +48,15 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     final String name = widget.productData['name'];
     final String description = widget.productData['description'];
     final String imageUrl = widget.productData['imageUrl'];
-    final double price = widget.productData['price'];
+    // Price coming from Firestore can be an int, double, or even a string.
+    // Parse it robustly so we don't crash when an int is provided.
+    final rawPrice = widget.productData['price'];
+    double price = 0.0;
+    if (rawPrice is num) {
+      price = rawPrice.toDouble();
+    } else if (rawPrice is String) {
+      price = double.tryParse(rawPrice) ?? 0.0;
+    }
 
     return Scaffold(
       backgroundColor: AppColors.offWhite,

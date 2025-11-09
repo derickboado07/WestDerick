@@ -1,4 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Allow network access in release builds (needed for Firebase, HTTP requests, images) -->
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:label="ecommerce_app"
         android:name="${applicationName}"
